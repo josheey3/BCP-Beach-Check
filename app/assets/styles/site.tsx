@@ -2,12 +2,12 @@ import { StyleSheet } from "react-native";
 
 const SiteStyles = StyleSheet.create({
 	cardTitle: {
-		marginBottom: "4px",
+		marginBottom: 4,
 		color: "#111",
 	},
 	compactCard: {
-		padding: "8px",
-		margin: "2px",
+		padding: 8,
+		margin: 2,
 		alignContent: "center",
 	},
 });

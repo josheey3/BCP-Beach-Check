@@ -7,8 +7,8 @@ import Icon from "react-native-vector-icons/MaterialIcons"; // https://github.co
 
 import Home from "../screens/home";
 import Settings from "../screens/settings";
-import Map from "../screens/Map";
-import FAQ from "../screens/FAQ";
+import Map from '../screens/map';
+import FAQ from "../screens/faq";
 import AllBeaches from "../screens/all-beaches";
 
 import SiteColours from "../assets/colours/site-colours";

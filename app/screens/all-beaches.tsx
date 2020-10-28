@@ -38,7 +38,7 @@ const AllBeaches = () => {
 						backgroundColor: SiteFunctions.getCongestionColour(item.congestion, "light"),
 					}}>
 					<Card.Title style={SiteStyles.cardTitle}>{item.name} beach</Card.Title>
-					<View style={{ flexDirection: "row", justifyContent: "space-around", marginBottom: "6px" }}>
+					<View style={{ flexDirection: "row", justifyContent: "space-around", marginBottom: 6 }}>
 						<Text>{item.congestion} congestion</Text>
 						<Text>BBQs: {item.bbqs}</Text>
 					</View>

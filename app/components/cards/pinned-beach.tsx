@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Text, View, ScrollView, Pressable } from "react-native";
 import { Card, Overlay } from "react-native-elements";
-import Modal from "modal-react-native-web"; // Required for react-native-elements overlay on web
 
 import beachData from "../../data/beach-data";
 import userSettings from "../../data/user-settings";
@@ -30,8 +29,8 @@ const PinnedBeach = (item: any, key: number) => {
 					key={key}
 					containerStyle={{
 						backgroundColor: SiteFunctions.getCongestionColour(beachData[item].congestion),
-						padding: "8px",
-						margin: "2px",
+						padding: 8,
+						margin: 2,
 						alignSelf: "center",
 					}}>
 					<Card.Title style={SiteStyles.cardTitle}>{beachData[item].name}</Card.Title>
@@ -39,7 +38,7 @@ const PinnedBeach = (item: any, key: number) => {
 				</Card>
 			</Pressable>
 
-			<Overlay ModalComponent={Modal} isVisible={visible} onBackdropPress={toggleOverlay}>
+			<Overlay isVisible={visible} onBackdropPress={toggleOverlay}>
 				<Text>
 					{beachData[item].name}
 					{beachData[item].congestion}
