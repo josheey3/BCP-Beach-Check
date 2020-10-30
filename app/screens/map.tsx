@@ -1,52 +1,53 @@
-import React from "react";
-import { Text, View } from "react-native";
+import React, { useState } from "react";
+import { Text, View, StyleSheet } from "react-native";
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
+import MapMarkers from "../data/map-markers";
+import SiteFunctions from "../functions/site-functions";
+
+//const [region, setRegion] = useState({})
+function getInitialState() {
+	return {
+		region: {
+			latitude: 37.78825,
+			longitude: -122.4324,
+			latitudeDelta: 0.0922,
+			longitudeDelta: 0.0421,
+		},
+	};
+}
 
 const Map = () => {
+	const [region, setRegion] = useState({ latitude: 50.7065464, longitude: -1.8505051, latitudeDelta: 0.25, longitudeDelta: 0.25 });
+
 	return (
-		<View style={{ flex: 1, justifyContent: "center", alignItems: "center" }} >
-			<Text>Map</Text>
+		<View style={styles.container}>
+			<MapView provider={PROVIDER_GOOGLE} style={styles.map} initialRegion={region} onRegionChange={setRegion}>
+				{MapMarkers.map((marker, key) => (
+					<Marker
+						key={key}
+						opacity={region.latitudeDelta < 0.1 ? 1 : 0} // Only show markers when zoomed in enough
+						coordinate={marker.coordinate}
+						image={marker.image}
+						title={marker.title}
+						description={marker.description}
+					/>
+				))}
+			</MapView>
 		</View>
 	);
 };
 
 export default Map;
 
-// import React from "react";
-// import { Text, View, StyleSheet } from "react-native";
-
-// import MapView, { PROVIDER_GOOGLE } from "react-native-maps"; // remove PROVIDER_GOOGLE import if not using Google Maps
-
-// const styles = StyleSheet.create({
-// 	container: {
-// 		...StyleSheet.absoluteFillObject,
-// 		height: 400,
-// 		width: 400,
-// 		justifyContent: "flex-end",
-// 		alignItems: "center",
-// 	},
-// 	map: {
-// 		...StyleSheet.absoluteFillObject,
-// 	},
-// });
-
-// const Map = () => {
-// 	return (
-// 		// <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }} w>
-// 		// 	<Text>Map</Text>
-
-// 		// </View>
-// 		<View style={styles.container}>
-// 			<MapView
-// 				provider={PROVIDER_GOOGLE} // remove if not using Google Maps
-// 				style={styles.map}
-// 				region={{
-// 					latitude: 37.78825,
-// 					longitude: -122.4324,
-// 					latitudeDelta: 0.015,
-// 					longitudeDelta: 0.0121,
-// 				}}></MapView>
-// 		</View>
-// 	);
-// };
-
-// export default Map;
+const styles = StyleSheet.create({
+	container: {
+		...StyleSheet.absoluteFillObject,
+		height: "100%",
+		width: "100%",
+		justifyContent: "flex-end",
+		alignItems: "center",
+	},
+	map: {
+		...StyleSheet.absoluteFillObject,
+	},
+});

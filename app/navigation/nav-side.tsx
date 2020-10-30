@@ -1,6 +1,6 @@
 import React from "react";
-import { View } from "react-native";
-import { Header, Button } from "react-native-elements";
+import { View, useWindowDimensions } from "react-native";
+import { Header, Button, Text } from "react-native-elements";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
 
@@ -11,9 +11,13 @@ import SiteColours from "../assets/colours/site-colours";
 const Drawer = createDrawerNavigator();
 
 const NavSide = () => {
+	const ref = React.useRef(null);
+	const dimensions = useWindowDimensions();
+
 	return (
-		<NavigationContainer>
-			<Drawer.Navigator initialRouteName="Home">
+		<NavigationContainer ref={ref}>
+			<Text>Help</Text>
+			<Drawer.Navigator initialRouteName="Home" drawerType={dimensions.width >= 768 ? "permanent" : "front"}>
 				<Drawer.Screen name="Home" component={Home} />
 				<Drawer.Screen name="Notifications" component={Settings} />
 			</Drawer.Navigator>

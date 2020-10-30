@@ -10,6 +10,10 @@ const SiteStyles = StyleSheet.create({
 		margin: 2,
 		alignContent: "center",
 	},
+	row: {
+		flexDirection: "row",
+		justifyContent: "space-around",
+	},
 });
 
 export default SiteStyles;

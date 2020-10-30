@@ -9,7 +9,8 @@ import NavBottom from "./app/navigation/nav-bottom";
 export default function App() {
 	return (
 		<View style={styles.container}>
-			<StatusBar style="auto" />
+			{/* Light required as dark status bar cannot be seen with the dark purple header */}
+			<StatusBar style="light" /> 
 			<NavHeader></NavHeader>
 			{/* <NavSide></NavSide> */}
 			<NavBottom></NavBottom>

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { View, Text } from "react-native";
 import { Button, Overlay } from "react-native-elements";
-import Modal from "modal-react-native-web"; // Required for react-native-elements overlay on web
 
 import BeachData from "../../data/beach-data";
 
@@ -16,7 +15,7 @@ const BeachDetailsOverlay = ({ beachId }: any) => {
 		<View>
 			<Button title="Click" onPress={toggleOverlay} />
 
-			<Overlay ModalComponent={Modal} isVisible={visible} onBackdropPress={toggleOverlay}>
+			<Overlay isVisible={visible} onBackdropPress={toggleOverlay}>
 				<Text>
 					{BeachData[beachId].name}
 					{BeachData[beachId].congestion}

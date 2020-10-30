@@ -15,6 +15,22 @@ class SiteFunctions {
 		}
 		return colour;
 	}
+	static getAmenityColour(type: string, brightness?: string) {
+		let colour: string = "";
+		brightness == "light" ? (colour = "light") : brightness == "dark" ? (colour = "dark") : colour;
+		switch (type.toLocaleLowerCase()) {
+			case "toilet":
+				colour += "green";
+				break;
+			case "medium":
+				brightness == "light" ? (colour = "#FFDB99") : (colour += "orange");
+				break;
+			case "high":
+				brightness == "light" ? (colour = "#FFBBBB") : (colour += "red");
+				break;
+		}
+		return colour;
+	}
 }
 
 export default SiteFunctions;
