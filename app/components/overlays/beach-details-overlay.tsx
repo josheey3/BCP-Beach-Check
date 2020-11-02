@@ -22,7 +22,7 @@ const BeachDetailsOverlay = ({ beachId }: any) => {
 					{BeachData[beachId].bbqs}
 					{BeachData[beachId].cycling}
 					{BeachData[beachId].dogs}
-					{BeachData[beachId].lifegaurded}
+					{BeachData[beachId].lifeguarded}
 					{BeachData[beachId].toilets}
 				</Text>
 			</Overlay>

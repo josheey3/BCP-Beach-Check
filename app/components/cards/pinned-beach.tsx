@@ -45,7 +45,7 @@ const PinnedBeach = (item: any, key: number) => {
 					{beachData[item].bbqs}
 					{beachData[item].cycling}
 					{beachData[item].dogs}
-					{beachData[item].lifegaurded}
+					{beachData[item].lifeguarded}
 					{beachData[item].toilets}
 				</Text>
 			</Overlay>

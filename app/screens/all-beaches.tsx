@@ -32,7 +32,7 @@ const AllBeaches = () => {
 						borderColor: SiteFunctions.getCongestionColour(item.congestion),
 						backgroundColor: SiteFunctions.getCongestionColour(item.congestion, "light"),
 					}}>
-					<Card.Title style={SiteStyles.cardTitle}>{item.name} beach</Card.Title>
+					<Card.Title style={SiteStyles.cardTitle}>{item.name} Beach</Card.Title>
 					<View style={SiteStyles.row}>
 						<Text>{item.congestion} congestion</Text>
 						<Text>BBQs: {item.bbqs}</Text>
@@ -40,7 +40,7 @@ const AllBeaches = () => {
 					<View style={SiteStyles.row}>
 						<FontistoIcon name="bicycle" size={26} color={item.cycling == "Permitted" ? "black" : "lightgrey"} />
 						<MaterialIcon name="pets" size={26} color={item.dogs == "Permitted" ? "black" : "lightgrey"} />
-						<FontistoIcon name="doctor" size={26} color={item.lifegaurded == "Yes" ? "black" : "lightgrey"} />
+						<FontistoIcon name="doctor" size={26} color={item.lifeguarded == "Yes" ? "black" : "lightgrey"} />
 						<MaterialIcon name="wc" size={26} color={item.toilets == "Yes" ? "black" : "lightgrey"} />
 					</View>
 				</Card>
