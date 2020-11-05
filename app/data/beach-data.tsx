@@ -32,8 +32,8 @@ const BeachData = [
 		cycling: cycling[1],
 		bbqs: bbqs[2],
 		congestion: congestion[2],
-    },
-    {
+	},
+	{
 		id: 3,
 		name: "Alum Chine",
 		lifeguarded: lifeguarded[0],
@@ -43,7 +43,7 @@ const BeachData = [
 		bbqs: bbqs[2],
 		congestion: congestion[0],
 	},
-    {
+	{
 		id: 4,
 		name: "Bournemouth West",
 		lifeguarded: lifeguarded[1],
@@ -53,7 +53,7 @@ const BeachData = [
 		bbqs: bbqs[2],
 		congestion: congestion[1],
 	},
-    {
+	{
 		id: 5,
 		name: "Bournemouth Pier",
 		lifeguarded: lifeguarded[1],
@@ -63,7 +63,7 @@ const BeachData = [
 		bbqs: bbqs[1],
 		congestion: congestion[2],
 	},
-    {
+	{
 		id: 6,
 		name: "Bournemouth East",
 		lifeguarded: lifeguarded[1],
@@ -73,7 +73,7 @@ const BeachData = [
 		bbqs: bbqs[1],
 		congestion: congestion[0],
 	},
-    {
+	{
 		id: 7,
 		name: "Boscombe West",
 		lifeguarded: lifeguarded[0],
@@ -83,7 +83,7 @@ const BeachData = [
 		bbqs: bbqs[1],
 		congestion: congestion[1],
 	},
-    {
+	{
 		id: 8,
 		name: "Boscombe East",
 		lifeguarded: lifeguarded[0],
@@ -93,7 +93,7 @@ const BeachData = [
 		bbqs: bbqs[2],
 		congestion: congestion[0],
 	},
-    {
+	{
 		id: 9,
 		name: "Southborne West",
 		lifeguarded: lifeguarded[0],
@@ -103,7 +103,7 @@ const BeachData = [
 		bbqs: bbqs[2],
 		congestion: congestion[0],
 	},
-    {
+	{
 		id: 10,
 		name: "Southborne East",
 		lifeguarded: lifeguarded[0],
@@ -113,7 +113,7 @@ const BeachData = [
 		bbqs: bbqs[2],
 		congestion: congestion[1],
 	},
-    {
+	{
 		id: 11,
 		name: "Hengistbury Head",
 		lifeguarded: lifeguarded[0],
@@ -123,7 +123,7 @@ const BeachData = [
 		bbqs: bbqs[2],
 		congestion: congestion[2],
 	},
-    {
+	{
 		id: 12,
 		name: "Mudeford",
 		lifeguarded: lifeguarded[0],
@@ -132,7 +132,7 @@ const BeachData = [
 		cycling: cycling[1],
 		bbqs: bbqs[2],
 		congestion: congestion[0],
-	}
+	},
 ];
 
 export default BeachData;
