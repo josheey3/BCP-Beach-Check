@@ -1,11 +1,16 @@
 import React, { useState } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import MapView, { Marker, PROVIDER_GOOGLE, Polygon } from "react-native-maps";
 import BeachData from "../data/beach-data";
 import BeachSegments from "../data/beach-segments";
 import MapMarkers from "../data/map-markers";
 import SiteFunctions from "../functions/site-functions";
 
+/**
+ * @description a map view using Google Maps, that contains an overlay for congestion in Bournemouth Beach and icons for toilets and lifeguards
+ * @author Josh Burtsal
+ * @param {*} preview if true shows a more zoomed in smaller version of the map for small previews
+ */
 const Map = (preview: any) => {
 	const [region, setRegion] = useState({
 		latitude: 50.7065464,
