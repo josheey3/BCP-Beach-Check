@@ -1,11 +1,12 @@
 import React from "react";
-import { ScrollView, Text, View, StyleSheet } from "react-native";
-import { Card } from "react-native-elements";
+import { ScrollView, Text, View } from "react-native";
+import { Card, Button } from "react-native-elements";
 import SiteStyles from "../assets/styles/site";
 import BeachData from "../data/beach-data";
 import SiteFunctions from "../functions/site-functions";
 import MaterialIcon from "react-native-vector-icons/MaterialIcons"; // https://github.com/oblador/react-native-vector-icons
 import FontistoIcon from "react-native-vector-icons/Fontisto";
+import UserSettings from "../data/user-settings";
 
 const AllBeaches = () => {
 	return (
@@ -29,15 +30,25 @@ const AllBeaches = () => {
 				<Card
 					key={key}
 					containerStyle={{
-						borderColor: SiteFunctions.getCongestionColour(item.congestion),
+						borderColor: SiteFunctions.getCongestionColour(item.congestion, "dark"),
 						backgroundColor: SiteFunctions.getCongestionColour(item.congestion, "light"),
 					}}>
-					<Card.Title style={SiteStyles.cardTitle}>{item.name} Beach</Card.Title>
+					<Button
+						type="clear"
+						icon={{
+							name: "star",
+							color: UserSettings.pinnedBeaches.includes(item.id) ? "gold" : "grey",
+						}}
+						title={item.name + " Beach"}
+						titleStyle={{ color: "black" }}
+						onPress={() => SiteFunctions.toggleStarBeach(item.id)}
+					/>
 					<View style={SiteStyles.row}>
 						<Text>{item.congestion} congestion</Text>
 						<Text>BBQs: {item.bbqs}</Text>
 					</View>
 					<View style={SiteStyles.row}>
+						{/* Only show the icons that are relevant to the beach segement */}
 						{item.cycling == "Permitted" ? <FontistoIcon name="bicycle" size={26} /> : null}
 						{item.dogs == "Permitted" ? <MaterialIcon name="pets" size={26} /> : null}
 						{item.lifeguarded == "Yes" ? <FontistoIcon name="doctor" size={26} /> : null}

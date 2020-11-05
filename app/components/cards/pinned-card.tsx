@@ -17,10 +17,9 @@ const PinnedCard = () => {
 			<Card containerStyle={{ justifyContent: "center" }}>
 				<Card.Title style={SiteStyles.cardTitle}>Pinned beaches</Card.Title>
 
-				<ScrollView style={{ flex: 1, flexDirection: "row" }} horizontal={true} persistentScrollbar={true}>
+				<ScrollView horizontal={true} persistentScrollbar={true}>
 					{userSettings.pinnedBeaches.map((item, key) => (
 						// <PinnedBeach item={item} key={key}></PinnedBeach>
-
 						<Card
 							key={key}
 							containerStyle={{

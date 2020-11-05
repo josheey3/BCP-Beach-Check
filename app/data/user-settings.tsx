@@ -1,5 +1,5 @@
 const UserSettings = {
-	pinnedBeaches: [0, 1, 2, 3],
+	pinnedBeaches: [0, 4, 5, 6, 11],
 	name: "Josh",
 };
 export default UserSettings;

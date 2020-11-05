@@ -6,25 +6,35 @@ import BeachSegments from "../data/beach-segments";
 import MapMarkers from "../data/map-markers";
 import SiteFunctions from "../functions/site-functions";
 
-const Map = () => {
-	const [region, setRegion] = useState({ latitude: 50.7065464, longitude: -1.8505051, latitudeDelta: 0.25, longitudeDelta: 0.25 });
+const Map = (preview: any) => {
+	const [region, setRegion] = useState({
+		latitude: 50.7065464,
+		longitude: -1.8505051,
+		latitudeDelta: preview["preview"] === true ? 0.02 : 0.25,
+		longitudeDelta: 0.25,
+	});
 
 	return (
 		<View style={styles.container}>
 			<MapView provider={PROVIDER_GOOGLE} style={styles.map} initialRegion={region} onRegionChange={setRegion}>
-				{MapMarkers.map((marker, key) => (
-					<Marker
-						key={key}
-						opacity={region.latitudeDelta < 0.1 ? 1 : 0} // Only show markers when zoomed in enough
-						coordinate={marker.coordinate}
-						image={marker.image}
-						title={marker.title}
-						description={marker.description}
-					/>
-				))}
-
+				{preview["preview"] !== true
+					? MapMarkers.map((marker, key) => (
+							<Marker
+								key={key}
+								opacity={region.latitudeDelta < 0.1 ? 1 : 0} // Only show markers when zoomed in enough
+								coordinate={marker.coordinate}
+								image={marker.image}
+								title={marker.title}
+								description={marker.description}
+							/>
+					  ))
+					: null}
 				{BeachData.map((beach, key) => (
-					<Polygon key={key} strokeColor={SiteFunctions.getCongestionColour(beach.congestion, "dark")} fillColor={SiteFunctions.getCongestionColour(beach.congestion, "", 0.15)} coordinates={BeachSegments[key]}></Polygon>
+					<Polygon
+						key={key}
+						strokeColor={SiteFunctions.getCongestionColour(beach.congestion, "dark")}
+						fillColor={SiteFunctions.getCongestionColour(beach.congestion, "", 0.15)}
+						coordinates={BeachSegments[key]}></Polygon>
 				))}
 			</MapView>
 		</View>
@@ -43,5 +53,6 @@ const styles = StyleSheet.create({
 	},
 	map: {
 		...StyleSheet.absoluteFillObject,
+		minHeight: 200,
 	},
 });
