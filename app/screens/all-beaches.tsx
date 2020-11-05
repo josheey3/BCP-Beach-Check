@@ -38,10 +38,10 @@ const AllBeaches = () => {
 						<Text>BBQs: {item.bbqs}</Text>
 					</View>
 					<View style={SiteStyles.row}>
-						<FontistoIcon name="bicycle" size={26} color={item.cycling == "Permitted" ? "black" : "lightgrey"} />
-						<MaterialIcon name="pets" size={26} color={item.dogs == "Permitted" ? "black" : "lightgrey"} />
-						<FontistoIcon name="doctor" size={26} color={item.lifeguarded == "Yes" ? "black" : "lightgrey"} />
-						<MaterialIcon name="wc" size={26} color={item.toilets == "Yes" ? "black" : "lightgrey"} />
+						{item.cycling == "Permitted" ? <FontistoIcon name="bicycle" size={26} /> : null}
+						{item.dogs == "Permitted" ? <MaterialIcon name="pets" size={26} /> : null}
+						{item.lifeguarded == "Yes" ? <FontistoIcon name="doctor" size={26} /> : null}
+						{item.toilets == "Yes" ? <MaterialIcon name="wc" size={26} /> : null}
 					</View>
 				</Card>
 			))}

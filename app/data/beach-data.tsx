@@ -71,7 +71,7 @@ const BeachData = [
 		dogs: dogs[1],
 		cycling: cycling[1],
 		bbqs: bbqs[1],
-		congestion: congestion[1],
+		congestion: congestion[0],
 	},
     {
 		id: 7,
@@ -111,7 +111,7 @@ const BeachData = [
 		dogs: dogs[1],
 		cycling: cycling[1],
 		bbqs: bbqs[2],
-		congestion: congestion[0],
+		congestion: congestion[1],
 	},
     {
 		id: 11,
