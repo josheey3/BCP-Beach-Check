@@ -37,7 +37,7 @@ const AllBeaches = () => {
 						type="clear"
 						icon={{
 							name: "star",
-							color: UserSettings.pinnedBeaches.includes(item.id) ? "gold" : "grey",
+							color: UserSettings.starredBeaches.includes(item.id) ? "gold" : "grey",
 						}}
 						title={item.name + " Beach"}
 						titleStyle={{ color: "black" }}

@@ -10,7 +10,7 @@ import SiteStyles from "../../assets/styles/site";
 import BeachDetailsOverlay from "../overlays/beach-details-overlay";
 import SiteFunctions from "../../functions/site-functions";
 
-const PinnedBeach = (item: any, key: number) => {
+const StarredBeach = (item: any, key: number) => {
 	const [visible, setVisible] = useState(false);
 
 	const toggleOverlay = () => {
@@ -53,4 +53,4 @@ const PinnedBeach = (item: any, key: number) => {
 	);
 };
 
-export default PinnedBeach;
+export default StarredBeach;

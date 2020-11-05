@@ -48,9 +48,9 @@ class SiteFunctions {
 	}
 
 	static toggleStarBeach(id: number): any {
-		let idIndex = UserSettings.pinnedBeaches.indexOf(id);
+		let idIndex = UserSettings.starredBeaches.indexOf(id);
 		/* If id is not in starred beaches add it, else remove it if it is */
-		idIndex === -1 ? UserSettings.pinnedBeaches.push(id) : UserSettings.pinnedBeaches.splice(idIndex, 1);
+		idIndex === -1 ? UserSettings.starredBeaches.push(id) : UserSettings.starredBeaches.splice(idIndex, 1);
 	}
 }
 

@@ -1,6 +1,6 @@
 import React from "react";
-import { Text, View, ScrollView, Pressable } from "react-native";
-import { Card } from "react-native-elements";
+import { View, ScrollView } from "react-native";
+import { Card, Button } from "react-native-elements";
 
 import beachData from "../../data/beach-data";
 import userSettings from "../../data/user-settings";
@@ -8,18 +8,18 @@ import userSettings from "../../data/user-settings";
 import SiteStyles from "../../assets/styles/site";
 
 import BeachDetailsOverlay from "../overlays/beach-details-overlay";
-import PinnedBeach from "./pinned-beach";
+import StarredBeach from "./starred-beach";
 import SiteFunctions from "../../functions/site-functions";
 
-const PinnedCard = () => {
+const StarredCard = ({ navigation }: any) => {
 	return (
 		<View style={{ width: "100%" }}>
 			<Card containerStyle={{ justifyContent: "center" }}>
-				<Card.Title style={SiteStyles.cardTitle}>Pinned beaches</Card.Title>
+				<Card.Title style={SiteStyles.cardTitle}>Starred beaches</Card.Title>
 
-				<ScrollView horizontal={true} persistentScrollbar={true}>
-					{userSettings.pinnedBeaches.map((item, key) => (
-						// <PinnedBeach item={item} key={key}></PinnedBeach>
+				<ScrollView horizontal={true}>
+					{userSettings.starredBeaches.map((item, key) => (
+						// <StarredBeach item={item} key={key}></StarredBeach>
 						<Card
 							key={key}
 							containerStyle={{
@@ -38,4 +38,4 @@ const PinnedCard = () => {
 	);
 };
 
-export default PinnedCard;
+export default StarredCard;
