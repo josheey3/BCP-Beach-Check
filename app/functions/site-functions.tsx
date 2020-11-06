@@ -46,25 +46,6 @@ class SiteFunctions {
 		return colour;
 	}
 
-
-	// static getAmenityColour(type: string, brightness?: string) {
-	// 	let colour: string = "";
-	// 	brightness == "light" ? (colour = "light") : brightness == "dark" ? (colour = "dark") : colour;
-	// 	switch (type.toLocaleLowerCase()) {
-	// 		case "toilet":
-	// 			colour += "green";
-	// 			break;
-	// 		case "medium":
-	// 			brightness == "light" ? (colour = "#FFDB99") : (colour += "orange");
-	// 			break;
-	// 		case "high":
-	// 			brightness == "light" ? (colour = "#FFBBBB") : (colour += "red");
-	// 			break;
-	// 	}
-	// 	return colour;
-	// }
-
-
 	/**
 	 * @description star or unstar the given beach segment id
 	 * @author Josh Burtsal
@@ -72,11 +53,14 @@ class SiteFunctions {
 	 * @param {number} id id of a beach segment
 	 * @memberof SiteFunctions
 	 */
-	static toggleStarBeach(id: number) {
-		let userSettings: any = DataFunctions.getUserSettings();
-		let idIndex = userSettings.starredBeaches.indexOf(id);
+	static toggleStarBeach(id: number, starredBeaches: Array<any>): Array<any> {
+		//let userSettings: any = DataFunctions.getUserSettings();
+		let idIndex = starredBeaches.indexOf(id);
 		/* If id is not in starred beaches add it, else remove it if it is */
-		idIndex === -1 ? userSettings.starredBeaches.push(id) : userSettings.starredBeaches.splice(idIndex, 1);
+		idIndex === -1 ? starredBeaches.push(id) : starredBeaches.splice(idIndex, 1);
+		console.log("ID",id)
+		console.log("Star",starredBeaches)
+		return starredBeaches;
 	}
 }
 
