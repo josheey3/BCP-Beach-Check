@@ -1,14 +1,17 @@
 import React from "react";
 import { ScrollView, Text, View } from "react-native";
 import { Card, Button } from "react-native-elements";
-import SiteStyles from "../assets/styles/site";
-import BeachData from "../data/beach-data";
-import SiteFunctions from "../functions/site-functions";
 import MaterialIcon from "react-native-vector-icons/MaterialIcons"; // https://github.com/oblador/react-native-vector-icons
 import FontistoIcon from "react-native-vector-icons/Fontisto";
-import UserSettings from "../data/user-settings";
+
+import SiteStyles from "../assets/styles/site";
+import SiteFunctions from "../functions/site-functions";
+import DataFunctions from "../functions/data-functions";
 
 const AllBeaches = () => {
+	let beachData: any = DataFunctions.getBeachData();
+	let userSettings: any = DataFunctions.getUserSettings();
+
 	return (
 		<ScrollView persistentScrollbar={true}>
 			<Card>
@@ -26,7 +29,7 @@ const AllBeaches = () => {
 					<Text>Toilets</Text>
 				</View>
 			</Card>
-			{BeachData.map((item, key) => (
+			{beachData.map((item: any, key: number) => (
 				<Card
 					key={key}
 					containerStyle={{
@@ -37,7 +40,7 @@ const AllBeaches = () => {
 						type="clear"
 						icon={{
 							name: "star",
-							color: UserSettings.starredBeaches.includes(item.id) ? "gold" : "grey",
+							color: userSettings.starredBeaches.includes(item.id) ? "gold" : "grey",
 						}}
 						title={item.name + " Beach"}
 						titleStyle={{ color: "black" }}

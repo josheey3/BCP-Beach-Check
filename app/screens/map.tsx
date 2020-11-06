@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
 import MapView, { Marker, PROVIDER_GOOGLE, Polygon } from "react-native-maps";
-import BeachData from "../data/beach-data";
-import BeachSegments from "../data/beach-segments";
-import MapMarkers from "../data/map-markers";
+
+import DataFunctions from "../functions/data-functions";
 import SiteFunctions from "../functions/site-functions";
 
 /**
@@ -12,6 +11,10 @@ import SiteFunctions from "../functions/site-functions";
  * @param {*} preview if true shows a more zoomed in smaller version of the map for small previews
  */
 const Map = (preview: any) => {
+	let beachData: any = DataFunctions.getBeachData();
+	let mapMarkers: any = DataFunctions.getMapMarkers();
+	let beachSegments: any = DataFunctions.getBeachSegments();
+
 	const [region, setRegion] = useState({
 		latitude: 50.7065464,
 		longitude: -1.8505051,
@@ -21,9 +24,9 @@ const Map = (preview: any) => {
 
 	return (
 		<View style={styles.container}>
-			<MapView provider={PROVIDER_GOOGLE} style={styles.map} initialRegion={region} onRegionChange={setRegion}>
+			<MapView provider={PROVIDER_GOOGLE} style={styles.map} initialRegion={region} onRegionChange={setRegion} showsPointsOfInterest={true}>
 				{preview["preview"] !== true
-					? MapMarkers.map((marker, key) => (
+					? mapMarkers.map((marker: any, key: number) => (
 							<Marker
 								key={key}
 								opacity={region.latitudeDelta < 0.1 ? 1 : 0} // Only show markers when zoomed in enough
@@ -34,12 +37,12 @@ const Map = (preview: any) => {
 							/>
 					  ))
 					: null}
-				{BeachData.map((beach, key) => (
+				{beachData.map((beach: any, key: number) => (
 					<Polygon
 						key={key}
 						strokeColor={SiteFunctions.getCongestionColour(beach.congestion, "dark")}
 						fillColor={SiteFunctions.getCongestionColour(beach.congestion, "", 0.15)}
-						coordinates={BeachSegments[key]}></Polygon>
+						coordinates={beachSegments[key]}></Polygon>
 				))}
 			</MapView>
 		</View>

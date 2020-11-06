@@ -2,23 +2,25 @@ import React from "react";
 import { View, ScrollView } from "react-native";
 import { Card, Button } from "react-native-elements";
 
-import beachData from "../../data/beach-data";
-import userSettings from "../../data/user-settings";
-
 import SiteStyles from "../../assets/styles/site";
 
 import BeachDetailsOverlay from "../overlays/beach-details-overlay";
 import StarredBeach from "./starred-beach";
-import SiteFunctions from "../../functions/site-functions";
 
-const StarredCard = ({ navigation }: any) => {
+import SiteFunctions from "../../functions/site-functions";
+import DataFunctions from "../../functions/data-functions";
+
+const StarredCard = () => {
+	let beachData: any = DataFunctions.getBeachData();
+	let userSettings: any = DataFunctions.getUserSettings();
+
 	return (
 		<View style={{ width: "100%" }}>
 			<Card containerStyle={{ justifyContent: "center" }}>
 				<Card.Title style={SiteStyles.cardTitle}>Starred beaches</Card.Title>
 
 				<ScrollView horizontal={true}>
-					{userSettings.starredBeaches.map((item, key) => (
+					{userSettings.starredBeaches.map((item: any, key: number) => (
 						// <StarredBeach item={item} key={key}></StarredBeach>
 						<Card
 							key={key}

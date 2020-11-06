@@ -1,4 +1,4 @@
-import UserSettings from "../data/user-settings";
+import DataFunctions from "./data-functions";
 
 /**
  * @description a class containing useful funtions for use accross all parts of the site
@@ -73,9 +73,10 @@ class SiteFunctions {
 	 * @memberof SiteFunctions
 	 */
 	static toggleStarBeach(id: number) {
-		let idIndex = UserSettings.starredBeaches.indexOf(id);
+		let userSettings: any = DataFunctions.getUserSettings();
+		let idIndex = userSettings.starredBeaches.indexOf(id);
 		/* If id is not in starred beaches add it, else remove it if it is */
-		idIndex === -1 ? UserSettings.starredBeaches.push(id) : UserSettings.starredBeaches.splice(idIndex, 1);
+		idIndex === -1 ? userSettings.starredBeaches.push(id) : userSettings.starredBeaches.splice(idIndex, 1);
 	}
 }
 
