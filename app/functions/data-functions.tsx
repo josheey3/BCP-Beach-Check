@@ -16,6 +16,13 @@ class DataFunctions {
 		return data;
 	}
 
+	static getBeachDataByKey(key: string, value: string): Array<any> {
+		let data: any = BeachData.filter((beach: any) => {
+			return beach[key].toLocaleLowerCase().includes(value.toLocaleLowerCase());
+		});
+		return data;
+	}
+
 	static getMapMarkers(id?: number) {
 		let markers;
 		id ? (markers = MapMarkers[id]) : (markers = MapMarkers);

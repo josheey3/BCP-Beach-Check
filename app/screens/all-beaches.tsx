@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ScrollView, Text, View } from "react-native";
-import { Card, Button } from "react-native-elements";
+import { Card, Button, SearchBar } from "react-native-elements";
 import MaterialIcon from "react-native-vector-icons/MaterialIcons"; // https://github.com/oblador/react-native-vector-icons
 import FontistoIcon from "react-native-vector-icons/Fontisto";
 
@@ -15,8 +15,15 @@ const AllBeaches = () => {
 	const [starredBeaches, setStarredBeach] = useState([true, false, true, false]);
 	const [beachData, setBeachData] = useState(DataFunctions.getBeachData());
 
+	const [search, setSearch] = useState("");
+	const updateBeachData = (search: string) => {
+		setSearch(search);
+		setBeachData(DataFunctions.getBeachDataByKey("name", search));
+	};
+
 	return (
 		<ScrollView persistentScrollbar={true}>
+			<SearchBar placeholder="Search..." onChangeText={updateBeachData} value={search} />
 			<Card>
 				<Card.Title style={SiteStyles.cardTitle}>Beach amenities</Card.Title>
 				<View style={SiteStyles.row}>
@@ -32,8 +39,6 @@ const AllBeaches = () => {
 					<Text>Toilets</Text>
 				</View>
 			</Card>
-			<Button title="Clack" onPress={() => setBeachData([])}></Button>
-			<Button title="Clock" onPress={() => setBeachData([DataFunctions.getBeachData(2)])}></Button>
 			{beachData.map((item: any, key: number) => (
 				<Card
 					key={key}
