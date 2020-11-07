@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
+import { Button } from "react-native-elements";
 import MapView, { Marker, PROVIDER_GOOGLE, Polygon } from "react-native-maps";
+import SiteColours from "../assets/colours/site-colours";
 
 import DataFunctions from "../functions/data-functions";
 import SiteFunctions from "../functions/site-functions";
@@ -41,10 +43,26 @@ const Map = (preview: any) => {
 					<Polygon
 						key={key}
 						strokeColor={SiteFunctions.getCongestionColour(beach.congestion, "dark")}
-						fillColor={SiteFunctions.getCongestionColour(beach.congestion, "", 0.15)}
+						fillColor={SiteFunctions.getCongestionColour(beach.congestion, "", 0.25)}
 						coordinates={beachSegments[key]}></Polygon>
 				))}
 			</MapView>
+			<Button
+				title="Recenter"
+				titleStyle={{ color: SiteColours.primary }}
+				type="outline"
+				icon={{
+					name: "navigation",
+					color: SiteColours.primary,
+				}}
+				onPress={() =>
+					setRegion({
+						latitude: 50.7065464,
+						longitude: -1.8505051,
+						latitudeDelta: 0.25,
+						longitudeDelta: 0.25,
+					})
+				}></Button>
 		</View>
 	);
 };

@@ -7,7 +7,7 @@ import Icon from "react-native-vector-icons/MaterialIcons"; // https://github.co
 
 import Home from "../screens/home";
 import Settings from "../screens/settings";
-import Map from '../screens/map';
+import Map from "../screens/map";
 import FAQ from "../screens/faq";
 import AllBeaches from "../screens/all-beaches";
 
@@ -36,15 +36,6 @@ const NavBottom = () => {
 					}}
 				/>
 				<Tab.Screen
-					name="Settings"
-					component={Settings}
-					options={{
-						tabBarLabel: "Settings",
-						tabBarIcon: ({ color }) => <Icon name="settings" size={26} color={color} />,
-						// tabBarIcon: ({ color }) => <Icon name="cog" size={26} color={color} />,
-					}}
-				/>
-				<Tab.Screen
 					name="Map"
 					component={Map}
 					options={{
@@ -53,17 +44,20 @@ const NavBottom = () => {
 					}}
 				/>
 				<Tab.Screen
+					name="AllBeaches"
+					component={AllBeaches}
+					options={{
+						tabBarLabel: "Search",
+						tabBarIcon: ({ color }) => <Icon name="search" size={26} color={color} />,
+					}}
+				/>
+				<Tab.Screen
 					name="FAQ"
 					component={FAQ}
 					options={{
 						tabBarLabel: "FAQ",
 						tabBarIcon: ({ color }) => <Icon name="help" size={26} color={color} />,
-						// tabBarIcon: ({ color }) => <Icon name="question" size={26} color={color} />,
 					}}
-				/>
-				<Tab.Screen
-					name="AllBeaches"
-					component={AllBeaches}
 				/>
 			</Tab.Navigator>
 		</NavigationContainer>

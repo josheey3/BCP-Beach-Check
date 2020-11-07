@@ -9,10 +9,11 @@ import SiteFunctions from "../functions/site-functions";
 import DataFunctions from "../functions/data-functions";
 
 const AllBeaches = () => {
-	let beachData: any = DataFunctions.getBeachData();
+	//let beachData: any = DataFunctions.getBeachData();
 	let userSettings: any = DataFunctions.getUserSettings();
 
-	const [starredBeaches, setStarredBeach] = useState(Array);
+	const [starredBeaches, setStarredBeach] = useState([true, false, true, false]);
+	const [beachData, setBeachData] = useState(DataFunctions.getBeachData());
 
 	return (
 		<ScrollView persistentScrollbar={true}>
@@ -31,12 +32,16 @@ const AllBeaches = () => {
 					<Text>Toilets</Text>
 				</View>
 			</Card>
+			<Button title="Clack" onPress={() => setBeachData([])}></Button>
+			<Button title="Clock" onPress={() => setBeachData([DataFunctions.getBeachData(2)])}></Button>
 			{beachData.map((item: any, key: number) => (
 				<Card
 					key={key}
 					containerStyle={{
 						borderColor: SiteFunctions.getCongestionColour(item.congestion, "dark"),
 						backgroundColor: SiteFunctions.getCongestionColour(item.congestion, "light"),
+						padding: 6,
+						paddingTop: 0,
 					}}>
 					<Button
 						type="clear"
@@ -48,13 +53,17 @@ const AllBeaches = () => {
 						title={item.name + " Beach"}
 						titleStyle={{ color: "black" }}
 						onPress={() => {
-							console.log(starredBeaches)
 							//
 							//
-							setStarredBeach([!starredBeaches[key],starredBeaches[key]]);
+							// let idIndex = starredBeaches.indexOf(key);
+							// /* If id is not in starred beaches add it, else remove it if it is */
+							// idIndex === -1 ? starredBeaches.push(key) : starredBeaches.splice(idIndex, 1);
+							starredBeaches[key] = !starredBeaches[key];
+							setStarredBeach(starredBeaches);
+							// setStarredBeach([!starredBeaches[key], starredBeaches[key]]);
 							//
 							//
-							console.log(starredBeaches)
+							console.log(starredBeaches);
 						}}
 						// onPress={() => (userSettings.starredBeaches = SiteFunctions.toggleStarBeach(item.id, userSettings.starredBeaches))}
 					/>

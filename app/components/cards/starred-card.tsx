@@ -5,7 +5,7 @@ import { Card, Button } from "react-native-elements";
 import SiteStyles from "../../assets/styles/site";
 
 import BeachDetailsOverlay from "../overlays/beach-details-overlay";
-import StarredBeach from "./starred-beach";
+// import StarredBeach from "./starred-beach";
 
 import SiteFunctions from "../../functions/site-functions";
 import DataFunctions from "../../functions/data-functions";
@@ -21,11 +21,11 @@ const StarredCard = () => {
 
 				<ScrollView horizontal={true}>
 					{userSettings.starredBeaches.map((item: any, key: number) => (
-						// <StarredBeach item={item} key={key}></StarredBeach>
 						<Card
 							key={key}
 							containerStyle={{
 								backgroundColor: SiteFunctions.getCongestionColour(beachData[item].congestion),
+								borderColor: SiteFunctions.getCongestionColour(beachData[item].congestion, "dark"),
 								padding: 8,
 								margin: 2,
 								alignSelf: "center",

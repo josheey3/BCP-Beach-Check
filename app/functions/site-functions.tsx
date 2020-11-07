@@ -1,12 +1,9 @@
-import DataFunctions from "./data-functions";
-
 /**
  * @description a class containing useful funtions for use accross all parts of the site
  * @author Josh Burtsal
  * @class SiteFunctions
  */
 class SiteFunctions {
-
 	/**
 	 * @description used for getting the colour/traffic light for congestion based on the given congestion string
 	 * @author Josh Burtsal
@@ -22,23 +19,23 @@ class SiteFunctions {
 		switch (congestion.toLocaleLowerCase()) {
 			case "low":
 				if (brightness) {
-					brightness == "light" ? (colour += "0,225,0") : (colour += "0,80,0");
+					brightness == "light" ? (colour += "100,225,100") : (colour += "0,80,0");
 				} else {
-					colour += "0,130,0";
+					colour += "0,180,0";
 				}
 				break;
 			case "medium":
 				if (brightness) {
-					brightness == "light" ? (colour += "255,193,77") : (colour += "255,125,0");
+					brightness == "light" ? (colour += "255,200,100") : (colour += "255,125,0");
 				} else {
-					colour += "255,165,0";
+					colour += "255,180,20";
 				}
 				break;
 			case "high":
 				if (brightness) {
-					brightness == "light" ? (colour += "255,70,70") : (colour += "200,0,0");
+					brightness == "light" ? (colour += "255,100,100") : (colour += "200,0,0");
 				} else {
-					colour += "255,0,0";
+					colour += "255,40,40";
 				}
 				break;
 		}
@@ -58,8 +55,8 @@ class SiteFunctions {
 		let idIndex = starredBeaches.indexOf(id);
 		/* If id is not in starred beaches add it, else remove it if it is */
 		idIndex === -1 ? starredBeaches.push(id) : starredBeaches.splice(idIndex, 1);
-		console.log("ID",id)
-		console.log("Star",starredBeaches)
+		console.log("ID", id);
+		console.log("Star", starredBeaches);
 		return starredBeaches;
 	}
 }
