@@ -11,20 +11,21 @@ import Map from "../screens/map";
 import FAQ from "../screens/faq";
 import AllBeaches from "../screens/all-beaches";
 
-import SiteColours from "../assets/colours/site-colours";
+import SiteFunctions from "../functions/site-functions";
 
 const Tab = createMaterialBottomTabNavigator();
 
 const NavBottom = () => {
+	let siteColours: any = SiteFunctions.getSiteColours();
+
 	return (
 		<NavigationContainer>
 			<Tab.Navigator
 				style={{ width: "100%" }}
 				initialRouteName="Home"
-				activeColor={SiteColours.primary}
-				inactiveColor={SiteColours.primaryDark}
-				barStyle={{ backgroundColor: SiteColours.secondary }}
-			>
+				activeColor={siteColours.primary}
+				inactiveColor={siteColours.primaryDark}
+				barStyle={{ backgroundColor: siteColours.secondary }}>
 				<Tab.Screen
 					name="Home"
 					component={Home}

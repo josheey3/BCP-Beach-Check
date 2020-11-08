@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
 import { Button } from "react-native-elements";
 import MapView, { Marker, PROVIDER_GOOGLE, Polygon } from "react-native-maps";
-import SiteColours from "../assets/colours/site-colours";
 
 import DataFunctions from "../functions/data-functions";
 import SiteFunctions from "../functions/site-functions";
@@ -16,6 +15,7 @@ const Map = (preview: any) => {
 	let beachData: any = DataFunctions.getBeachData();
 	let mapMarkers: any = DataFunctions.getMapMarkers();
 	let beachSegments: any = DataFunctions.getBeachSegments();
+
 
 	const [region, setRegion] = useState({
 		latitude: 50.7065464,

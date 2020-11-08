@@ -2,9 +2,8 @@ import BeachData from "../data/beach-data";
 import BeachSegments from "../data/beach-segments";
 import MapMarkers from "../data/map-markers";
 import UserSettings from "../data/user-settings";
-import FAQ from "../data/faqs.json";
+import FAQ from "../data/faqs";
 import Notices from "../data/notices";
-import { not } from "react-native-reanimated";
 
 /**
  * @description a class containing all the functions for getting data accross the app. Is designed so that static json files can be replaced with a proper API easily in the future
@@ -45,7 +44,7 @@ class DataFunctions {
 		return segments;
 	}
 
-	static getUserSettings() {
+	static getUserSettings(): any {
 		let settings = UserSettings;
 		return settings;
 	}

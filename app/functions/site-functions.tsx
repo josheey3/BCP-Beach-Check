@@ -1,3 +1,6 @@
+import SiteColours from "../assets/colours/site-colours";
+import DataFunctions from "./data-functions";
+
 /**
  * @description a class containing useful funtions for use accross all parts of the site
  * @author Josh Burtsal
@@ -58,6 +61,12 @@ class SiteFunctions {
 		console.log("ID", id);
 		console.log("Star", starredBeaches);
 		return starredBeaches;
+	}
+
+	static getSiteColours() {
+		let siteColours: any = SiteColours;
+		let colours: any = siteColours[DataFunctions.getUserSettings().theme.toLocaleLowerCase()];
+		return colours;
 	}
 }
 

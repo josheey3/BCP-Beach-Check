@@ -9,12 +9,12 @@ import BeachDetailsOverlay from "../overlays/beach-details-overlay";
 
 import SiteFunctions from "../../functions/site-functions";
 import DataFunctions from "../../functions/data-functions";
-import SiteColours from "../../assets/colours/site-colours";
 import MaterialIcon from "react-native-vector-icons/MaterialIcons"; // https://github.com/oblador/react-native-vector-icons
 
 const StarredCard = ({ navigation }: any) => {
 	let beachData: any = DataFunctions.getBeachData();
 	let userSettings: any = DataFunctions.getUserSettings();
+	let siteColours: any = SiteFunctions.getSiteColours();
 
 	return (
 		<View style={{ width: "100%" }}>
@@ -40,9 +40,9 @@ const StarredCard = ({ navigation }: any) => {
 				<Button
 					containerStyle={{ width: "100%" }}
 					title="View all beaches"
-					titleStyle={{ color: SiteColours.primary }}
+					titleStyle={{ color: siteColours.primary }}
 					type="clear"
-					icon={<MaterialIcon name="search" size={26} color={SiteColours.primary} />}
+					icon={<MaterialIcon name="search" size={26} color={siteColours.primary} />}
 					onPress={() => navigation.jumpTo("AllBeaches")}></Button>
 			</Card>
 		</View>
