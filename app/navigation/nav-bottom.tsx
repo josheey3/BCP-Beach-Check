@@ -24,7 +24,6 @@ const NavBottom = () => {
 				activeColor={SiteColours.primary}
 				inactiveColor={SiteColours.primaryDark}
 				barStyle={{ backgroundColor: SiteColours.secondary }}
-				// backBehavior="history"
 			>
 				<Tab.Screen
 					name="Home"

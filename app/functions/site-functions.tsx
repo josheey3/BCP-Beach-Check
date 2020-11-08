@@ -19,7 +19,7 @@ class SiteFunctions {
 		switch (congestion.toLocaleLowerCase()) {
 			case "low":
 				if (brightness) {
-					brightness == "light" ? (colour += "100,225,100") : (colour += "0,80,0");
+					brightness == "light" ? (colour += "100,225,100") : (colour += "0,120,0");
 				} else {
 					colour += "0,180,0";
 				}

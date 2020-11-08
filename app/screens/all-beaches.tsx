@@ -22,7 +22,7 @@ const AllBeaches = () => {
 	};
 
 	return (
-		<ScrollView persistentScrollbar={true}>
+		<ScrollView persistentScrollbar={true} style={{ borderColor: "rgba(0,0,0,0)" }}>
 			<SearchBar placeholder="Search..." onChangeText={updateBeachData} value={search} />
 			<Card>
 				<Card.Title style={SiteStyles.cardTitle}>Beach amenities</Card.Title>

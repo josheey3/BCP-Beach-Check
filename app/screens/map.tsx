@@ -26,7 +26,12 @@ const Map = (preview: any) => {
 
 	return (
 		<View style={styles.container}>
-			<MapView provider={PROVIDER_GOOGLE} style={styles.map} initialRegion={region} onRegionChange={setRegion} showsPointsOfInterest={true}>
+			<MapView
+				provider={PROVIDER_GOOGLE}
+				style={styles.map}
+				initialRegion={region}
+				onRegionChange={preview["preview"] !== true ? setRegion : () => {}} // Don't change region in preview mode
+				showsPointsOfInterest={true}>
 				{preview["preview"] !== true
 					? mapMarkers.map((marker: any, key: number) => (
 							<Marker
@@ -47,7 +52,7 @@ const Map = (preview: any) => {
 						coordinates={beachSegments[key]}></Polygon>
 				))}
 			</MapView>
-			<Button
+			{/* <Button
 				title="Recenter"
 				titleStyle={{ color: SiteColours.primary }}
 				type="outline"
@@ -62,7 +67,7 @@ const Map = (preview: any) => {
 						latitudeDelta: 0.25,
 						longitudeDelta: 0.25,
 					})
-				}></Button>
+				}></Button> */}
 		</View>
 	);
 };
