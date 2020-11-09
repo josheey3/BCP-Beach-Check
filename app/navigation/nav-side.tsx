@@ -9,7 +9,7 @@ import Settings from "../screens/settings";
 
 const Drawer = createDrawerNavigator();
 
-const NavSide = () => {
+const NavSideNOPE = () => {
 	const ref = React.useRef(null);
 	const dimensions = useWindowDimensions();
 
@@ -24,4 +24,4 @@ const NavSide = () => {
 	);
 };
 
-export default NavSide;
+export default NavSideNOPE;

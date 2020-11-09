@@ -54,19 +54,15 @@ class SiteFunctions {
 	 * @memberof SiteFunctions
 	 */
 	static toggleStarBeach(id: number, starredBeaches: Array<any>): Array<any> {
-		//let userSettings: any = DataFunctions.getUserSettings();
 		let idIndex = starredBeaches.indexOf(id);
 		/* If id is not in starred beaches add it, else remove it if it is */
 		idIndex === -1 ? starredBeaches.push(id) : starredBeaches.splice(idIndex, 1);
-		console.log("ID", id);
-		console.log("Star", starredBeaches);
 		return starredBeaches;
 	}
 
 	static getSiteColours(theme: string) {
 		let siteColours: any = SiteColours;
-		let colours: any = siteColours[DataFunctions.getUserSettings().theme.toLocaleLowerCase()];
-		// let colours: any = siteColours[theme];
+		let colours: any = siteColours[theme];
 		return colours;
 	}
 }

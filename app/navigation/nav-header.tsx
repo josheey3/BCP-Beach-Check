@@ -1,18 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import { View } from "react-native";
-import { Header, Button } from "react-native-elements";
+import { Header, Button, BottomSheet, ListItem } from "react-native-elements";
 
-import SiteFunctions from "../functions/site-functions";
+const NavHeader = ({ siteColours, userSettings, updateUserSettings }: any) => {
+	const [isVisible, setIsVisible] = useState(false);
+	const updateTheme = (theme: string) => {
+		updateUserSettings({ theme: theme });
+		setIsVisible(false);
+	};
 
-const NavHeader = () => {
-	let siteColours: any = SiteFunctions.getSiteColours();
+	const list = [
+		{ title: "Default", onPress: () => updateTheme("default") },
+		{ title: "Light", onPress: () => updateTheme("light") },
+		{ title: "Dark", onPress: () => updateTheme("dark") },
+		{
+			title: "Cancel",
+			containerStyle: { backgroundColor: "red" },
+			titleStyle: { color: "white" },
+			onPress: () => setIsVisible(false),
+		},
+	];
 
 	return (
 		<View style={{ width: "100%" }}>
 			<Header
 				backgroundColor={siteColours.secondary}
 				centerComponent={{ text: "BCP Beach Check", style: { color: "#fff" } }}
+				rightComponent={
+					<Button
+						type="clear"
+						icon={{
+							name: "palette",
+							color: siteColours.primary,
+						}}
+						onPress={() => setIsVisible(!isVisible)}
+					/>
+				}
+			/>
 
+			<BottomSheet isVisible={isVisible} modalProps={{ animationType: "slide" }}>
+				{list.map((l, i) => (
+					<ListItem key={i} containerStyle={l.containerStyle} onPress={l.onPress}>
+						<ListItem.Content>
+							<ListItem.Title style={l.titleStyle}>{l.title}</ListItem.Title>
+						</ListItem.Content>
+					</ListItem>
+				))}
+			</BottomSheet>
+
+			{/* 
 				/* 
 				As the app only needs 4 screens, not much navigation is needed. However, if later more navigation is needed these components would be optimal:
 
@@ -39,8 +75,7 @@ const NavHeader = () => {
 						onPress={() => console.log("Account")}
 					/>
 				}
-				*/
-			/>
+				*/}
 		</View>
 	);
 };

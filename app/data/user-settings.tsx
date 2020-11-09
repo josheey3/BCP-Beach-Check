@@ -1,5 +1,5 @@
 var UserSettings = {
-	starredBeaches: [0, 4, 5, 6, 11],
+	starredBeaches: [],
 	name: "Josh",
 	theme: "default",
 };

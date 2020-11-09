@@ -16,7 +16,6 @@ const Map = (preview: any) => {
 	let mapMarkers: any = DataFunctions.getMapMarkers();
 	let beachSegments: any = DataFunctions.getBeachSegments();
 
-
 	const [region, setRegion] = useState({
 		latitude: 50.7065464,
 		longitude: -1.8505051,
@@ -48,7 +47,7 @@ const Map = (preview: any) => {
 					<Polygon
 						key={key}
 						strokeColor={SiteFunctions.getCongestionColour(beach.congestion, "dark")}
-						fillColor={SiteFunctions.getCongestionColour(beach.congestion, "", 0.25)}
+						fillColor={SiteFunctions.getCongestionColour(beach.congestion, "", 0.5)}
 						coordinates={beachSegments[key]}></Polygon>
 				))}
 			</MapView>

@@ -6,9 +6,8 @@ import SiteStyles from "../assets/styles/site";
 import DataFunctions from "../functions/data-functions";
 import SiteFunctions from "../functions/site-functions";
 
-const FAQ = () => {
+const FAQ = ({ siteColours, userSettings, updateUserSettings }: any) => {
 	let faqData = DataFunctions.getFAQs();
-	let siteColours: any = SiteFunctions.getSiteColours();
 
 	return (
 		<ScrollView>

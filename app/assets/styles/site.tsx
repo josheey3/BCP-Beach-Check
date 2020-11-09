@@ -10,6 +10,14 @@ const SiteStyles = StyleSheet.create({
 		margin: 2,
 		alignContent: "center",
 	},
+	missingInfoCard: {
+		padding: 8,
+		margin: 2,
+		alignContent: "center",
+		backgroundColor: "#eee",
+		borderColor: "#111",
+		marginBottom: 8,
+	},
 	row: {
 		flexDirection: "row",
 		justifyContent: "space-around",
