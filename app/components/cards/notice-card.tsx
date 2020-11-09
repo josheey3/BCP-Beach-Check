@@ -1,9 +1,8 @@
 import React from "react";
-import { View, ScrollView, Text } from "react-native";
-import { Card, Button } from "react-native-elements";
+import { View, Text } from "react-native";
+import { Card } from "react-native-elements";
 
 import SiteStyles from "../../assets/styles/site";
-import SiteFunctions from "../../functions/site-functions";
 import DataFunctions from "../../functions/data-functions";
 
 const NoticeCard = () => {
@@ -20,11 +19,11 @@ const NoticeCard = () => {
 							{
 								backgroundColor: "rgba(255,0,0,0.25)",
 								borderColor: "red",
-								marginBottom: 4
+								marginBottom: 4,
 							},
 							SiteStyles.compactCard
 						)}>
-						<Text style={SiteStyles.cardTitle}>{item.title}</Text>
+						<Card.Title style={SiteStyles.cardTitle}>{item.title}</Card.Title>
 						<Text>{item.message}</Text>
 					</Card>
 				))}

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
-import { Button } from "react-native-elements";
 import MapView, { Marker, PROVIDER_GOOGLE, Polygon } from "react-native-maps";
 
 import DataFunctions from "../functions/data-functions";
@@ -51,22 +50,6 @@ const Map = (preview: any) => {
 						coordinates={beachSegments[key]}></Polygon>
 				))}
 			</MapView>
-			{/* <Button
-				title="Recenter"
-				titleStyle={{ color: SiteColours.primary }}
-				type="outline"
-				icon={{
-					name: "navigation",
-					color: SiteColours.primary,
-				}}
-				onPress={() =>
-					setRegion({
-						latitude: 50.7065464,
-						longitude: -1.8505051,
-						latitudeDelta: 0.25,
-						longitudeDelta: 0.25,
-					})
-				}></Button> */}
 		</View>
 	);
 };

@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, ScrollView, Text } from "react-native";
-import { Card, Button } from "react-native-elements";
-import MaterialIcon from "react-native-vector-icons/MaterialIcons"; // https://github.com/oblador/react-native-vector-icons
+import { Card } from "react-native-elements";
 
 import SiteStyles from "../../assets/styles/site";
 import SiteFunctions from "../../functions/site-functions";
 import DataFunctions from "../../functions/data-functions";
 
-const StarredCard = ({ navigation, siteColours, userSettings, updateUserSettings }: any) => {
+const StarredCard = ({ userSettings }: any) => {
 	let beachData: any = DataFunctions.getBeachData();
 
 	return (

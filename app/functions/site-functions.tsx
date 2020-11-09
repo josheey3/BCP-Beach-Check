@@ -1,5 +1,4 @@
 import SiteColours from "../assets/colours/site-colours";
-import DataFunctions from "./data-functions";
 
 /**
  * @description a class containing useful funtions for use accross all parts of the site
@@ -60,6 +59,13 @@ class SiteFunctions {
 		return starredBeaches;
 	}
 
+	/**
+	 * @description returns the current site colours from the user's settings
+	 * @static
+	 * @param {string} theme current theme: default/dark/light
+	 * @returns Object of primary, secondary & dark colours
+	 * @memberof SiteFunctions
+	 */
 	static getSiteColours(theme: string) {
 		let siteColours: any = SiteColours;
 		let colours: any = siteColours[theme];

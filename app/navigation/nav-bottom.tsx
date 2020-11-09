@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs"; // https://reactnavigation.org/docs/material-bottom-tab-navigator/
-
-//import Icon from "react-native-vector-icons/FontAwesome"; // https://github.com/oblador/react-native-vector-icons
 import Icon from "react-native-vector-icons/MaterialIcons"; // https://github.com/oblador/react-native-vector-icons
 
 import Home from "../screens/home";
-import Settings from "../screens/settings";
 import Map from "../screens/map";
 import FAQ from "../screens/faq";
 import AllBeaches from "../screens/all-beaches";

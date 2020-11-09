@@ -4,9 +4,8 @@ import { Button, Card } from "react-native-elements";
 import { Title } from "react-native-paper";
 import SiteStyles from "../assets/styles/site";
 import DataFunctions from "../functions/data-functions";
-import SiteFunctions from "../functions/site-functions";
 
-const FAQ = ({ siteColours, userSettings, updateUserSettings }: any) => {
+const FAQ = ({ siteColours }: any) => {
 	let faqData = DataFunctions.getFAQs();
 
 	return (

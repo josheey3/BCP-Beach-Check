@@ -10,7 +10,7 @@ const SiteColours = {
 		secondary: "#150C21",
 	},
 	light: {
-		primary: "#5555EE",
+		primary: "#1616e0",
 		primaryDark: "#A9A",
 		secondary: "#00ADE2",
 	},
