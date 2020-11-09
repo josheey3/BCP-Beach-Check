@@ -23,7 +23,7 @@ const NoticeCard = () => {
 							},
 							SiteStyles.compactCard
 						)}>
-						<Card.FeaturedSubtitle style={SiteStyles.cardTitle}>{item.title}</Card.FeaturedSubtitle>
+						<Text style={SiteStyles.cardTitle}>{item.title}</Text>
 						<Text>{item.message}</Text>
 					</Card>
 				))}

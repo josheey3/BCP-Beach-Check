@@ -8,8 +8,10 @@ import StarredCard from "../components/cards/starred-card";
 import SiteFunctions from "../functions/site-functions";
 import Map from "./map";
 
-const Home = ({ navigation }: any) => {
+const Home = ({ navigation, userSettings, updateUserSettings }: any) => {
 	let siteColours: any = SiteFunctions.getSiteColours();
+	//let a = options.updateUserSettings;
+	console.log(updateUserSettings);
 
 	return (
 		<ScrollView contentContainerStyle={{ alignItems: "center" }}>
@@ -27,7 +29,12 @@ const Home = ({ navigation }: any) => {
 				titleStyle={{ color: siteColours.primary }}
 				type="clear"
 				icon={<MaterialIcon name="map" size={26} color={siteColours.primary} />}
-				onPress={() => navigation.jumpTo("Map")}></Button>
+				// onPress={() => navigation.jumpTo("Map")}></Button>
+				onPress={() => {
+					console.log("1", userSettings);
+					updateUserSettings([0, 1], "New", "dark");
+					console.log("2", userSettings);
+				}}></Button>
 		</ScrollView>
 	);
 };

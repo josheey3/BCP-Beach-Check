@@ -22,23 +22,23 @@ class SiteFunctions {
 		switch (congestion.toLocaleLowerCase()) {
 			case "low":
 				if (brightness) {
-					brightness == "light" ? (colour += "100,225,100") : (colour += "0,120,0");
+					brightness == "light" ? (colour += "140,225,140") : (colour += "0,120,0");
 				} else {
-					colour += "0,180,0";
+					colour += "100,230,100";
 				}
 				break;
 			case "medium":
 				if (brightness) {
 					brightness == "light" ? (colour += "255,200,100") : (colour += "255,125,0");
 				} else {
-					colour += "255,180,20";
+					colour += "255,200,110";
 				}
 				break;
 			case "high":
 				if (brightness) {
-					brightness == "light" ? (colour += "255,100,100") : (colour += "200,0,0");
+					brightness == "light" ? (colour += "255,175,175") : (colour += "200,0,0");
 				} else {
-					colour += "255,40,40";
+					colour += "255,112,112";
 				}
 				break;
 		}
@@ -63,9 +63,10 @@ class SiteFunctions {
 		return starredBeaches;
 	}
 
-	static getSiteColours() {
+	static getSiteColours(theme: string) {
 		let siteColours: any = SiteColours;
 		let colours: any = siteColours[DataFunctions.getUserSettings().theme.toLocaleLowerCase()];
+		// let colours: any = siteColours[theme];
 		return colours;
 	}
 }

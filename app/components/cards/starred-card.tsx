@@ -1,5 +1,5 @@
 import React from "react";
-import { View, ScrollView } from "react-native";
+import { View, ScrollView, Text } from "react-native";
 import { Card, Button } from "react-native-elements";
 
 import SiteStyles from "../../assets/styles/site";
@@ -33,7 +33,7 @@ const StarredCard = ({ navigation }: any) => {
 								SiteStyles.compactCard
 							)}>
 							<Card.Title style={SiteStyles.cardTitle}>{beachData[item].name}</Card.Title>
-							<Card.FeaturedSubtitle>{beachData[item].congestion + " congestion"}</Card.FeaturedSubtitle>
+							<Text>{beachData[item].congestion + " congestion"}</Text>
 						</Card>
 					))}
 				</ScrollView>

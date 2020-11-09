@@ -44,7 +44,7 @@ const AllBeaches = () => {
 					key={key}
 					containerStyle={{
 						borderColor: SiteFunctions.getCongestionColour(item.congestion, "dark"),
-						backgroundColor: SiteFunctions.getCongestionColour(item.congestion, "light"),
+						backgroundColor: SiteFunctions.getCongestionColour(item.congestion),
 						padding: 6,
 						paddingTop: 0,
 					}}>
