@@ -6,6 +6,9 @@ import SiteStyles from "../../assets/styles/site";
 import SiteFunctions from "../../functions/site-functions";
 import DataFunctions from "../../functions/data-functions";
 
+/**
+ * @description displays cards of all the starred beach segments on the home page
+ */
 const StarredCard = ({ userSettings }: any) => {
 	let beachData: any = DataFunctions.getBeachData();
 

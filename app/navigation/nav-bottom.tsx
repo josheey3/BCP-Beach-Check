@@ -10,6 +10,9 @@ import AllBeaches from "../screens/all-beaches";
 
 const Tab = createMaterialBottomTabNavigator();
 
+/**
+ * @description displays the bottom material navigation bar
+ */
 const NavBottom = ({ siteColours, userSettings, updateUserSettings }: any) => {
 	return (
 		<NavigationContainer>

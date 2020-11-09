@@ -5,6 +5,9 @@ import { Card } from "react-native-elements";
 import SiteStyles from "../../assets/styles/site";
 import DataFunctions from "../../functions/data-functions";
 
+/**
+ * @description displays cards from json for important notices on the home page
+ */
 const NoticeCard = () => {
 	let noticeData: any = DataFunctions.getNotices();
 

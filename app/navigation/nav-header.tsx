@@ -3,11 +3,14 @@ import { View } from "react-native";
 import { Header, Button, BottomSheet, Card } from "react-native-elements";
 import SiteStyles from "../assets/styles/site";
 
+/**
+ * @description displays the top header bar with title and theme changer
+ */
 const NavHeader = ({ siteColours, userSettings, updateUserSettings }: any) => {
-	const [isVisible, setIsVisible] = useState(false);
+	const [isSheetVisible, setIsSheetVisible] = useState(false);
 	const updateTheme = (theme: string) => {
 		updateUserSettings({ theme: theme });
-		setIsVisible(false);
+		setIsSheetVisible(false);
 	};
 	const themeOptions = [
 		{
@@ -30,7 +33,7 @@ const NavHeader = ({ siteColours, userSettings, updateUserSettings }: any) => {
 			containerStyle: { backgroundColor: "red" },
 			titleStyle: { color: "white" },
 			onPress: () => {
-				setIsVisible(false);
+				setIsSheetVisible(false);
 			},
 		},
 	];
@@ -47,11 +50,12 @@ const NavHeader = ({ siteColours, userSettings, updateUserSettings }: any) => {
 							name: "palette",
 							color: siteColours.primary,
 						}}
-						onPress={() => setIsVisible(true)}
+						onPress={() => setIsSheetVisible(true)}
 					/>
 				}
 			/>
-			<BottomSheet isVisible={isVisible} modalProps={{ animationType: "slide", onRequestClose: () => setIsVisible(false) }}>
+			{/* Display a bottom sheet for switching themes */}
+			<BottomSheet isVisible={isSheetVisible} modalProps={{ animationType: "slide", onRequestClose: () => setIsSheetVisible(false) }}>
 				<View>
 					<Card containerStyle={Object.assign({ width: "100%" }, SiteStyles.compactCard)}>
 						<Card.Title style={SiteStyles.cardTitle}>Choose a theme</Card.Title>

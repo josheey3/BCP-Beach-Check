@@ -5,6 +5,9 @@ import { Title } from "react-native-paper";
 import SiteStyles from "../assets/styles/site";
 import DataFunctions from "../functions/data-functions";
 
+/**
+ * @description displays a list of all the FAQs and useful links
+ */
 const FAQ = ({ siteColours }: any) => {
 	let faqData = DataFunctions.getFAQs();
 

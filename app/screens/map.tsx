@@ -30,7 +30,7 @@ const Map = (preview: any) => {
 				initialRegion={region}
 				onRegionChange={preview["preview"] !== true ? setRegion : () => {}} // Don't change region in preview mode
 				showsPointsOfInterest={true}>
-				{preview["preview"] !== true
+				{preview["preview"] !== true // Don't show markers if map is in preview mode
 					? mapMarkers.map((marker: any, key: number) => (
 							<Marker
 								key={key}

@@ -8,6 +8,9 @@ import SiteStyles from "../assets/styles/site";
 import SiteFunctions from "../functions/site-functions";
 import DataFunctions from "../functions/data-functions";
 
+/**
+ * @description displays a searchable list of cards for each beach segement containing useful beach data
+ */
 const AllBeaches = ({ userSettings, updateUserSettings }: any) => {
 	const [beachData, setBeachData] = useState(DataFunctions.getBeachData());
 	const [search, setSearch] = useState("");
