@@ -20,6 +20,7 @@ const NoticeCard = () => {
 							{
 								backgroundColor: "rgba(255,0,0,0.25)",
 								borderColor: "red",
+								marginBottom: 4
 							},
 							SiteStyles.compactCard
 						)}>

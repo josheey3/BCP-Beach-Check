@@ -35,13 +35,14 @@ const AllBeaches = ({ siteColours, userSettings, updateUserSettings }: any) => {
 				</View>
 			</Card>
 			{beachData.map((item: any, key: number) => (
-				<View style={{ width: "100%" }}>
+				<View style={{ width: "100%" }} key={key}>
 					<Card
 						key={key}
 						containerStyle={Object.assign(
 							{
 								borderColor: SiteFunctions.getCongestionColour(item.congestion, "dark"),
 								backgroundColor: SiteFunctions.getCongestionColour(item.congestion),
+								paddingTop: 0,
 							},
 							SiteStyles.compactCard
 						)}>
@@ -49,7 +50,7 @@ const AllBeaches = ({ siteColours, userSettings, updateUserSettings }: any) => {
 							type="clear"
 							icon={{
 								name: "star",
-								color: userSettings.starredBeaches.includes(item.id) ? "black" : "rgba(220,220,220,.75)",
+								color: userSettings.starredBeaches.includes(item.id) ? "black" : "rgba(255,255,255,.75)",
 							}}
 							title={item.name + " Beach"}
 							titleStyle={{ color: "black" }}

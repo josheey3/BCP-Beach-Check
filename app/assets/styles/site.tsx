@@ -7,7 +7,7 @@ const SiteStyles = StyleSheet.create({
 	},
 	compactCard: {
 		padding: 8,
-		margin: 2,
+		margin: 0,
 		alignContent: "center",
 	},
 	missingInfoCard: {
