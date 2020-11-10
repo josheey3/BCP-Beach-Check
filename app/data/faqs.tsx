@@ -29,10 +29,6 @@ const faqs = [
 			"The congestion status reflects how busy each of our 24 sections of beach are. It considers the busyness of the zig zags, footpaths, promenades and the beach itself. We are working to include car park availability also.",
 	},
 	{
-		question: "I have a sight impairment. How can distinguish the congestion status of each beach?",
-		answer: "",
-	},
-	{
 		question: "Does the App collect my personal details?",
 		answer:
 			"No, it does not. The App does not ask for any personal details at any time. It does not track your location and does not require any contact details when using the feedback function.",

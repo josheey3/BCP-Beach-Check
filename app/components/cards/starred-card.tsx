@@ -14,7 +14,7 @@ const StarredCard = ({ userSettings }: any) => {
 
 	return (
 		<View style={{ width: "100%" }}>
-			<Card containerStyle={Object.assign({ paddingBottom: 0 }, SiteStyles.compactCard)}>
+			<Card containerStyle={[SiteStyles.compactCard, { paddingBottom: 0 }]}>
 				<Card.Title style={SiteStyles.cardTitle}>Starred beaches</Card.Title>
 				{userSettings.starredBeaches.length >= 1 ? (
 					<View>
@@ -22,13 +22,13 @@ const StarredCard = ({ userSettings }: any) => {
 							{userSettings.starredBeaches.map((item: any, key: number) => (
 								<Card
 									key={key}
-									containerStyle={Object.assign(
+									containerStyle={[
+										SiteStyles.compactCard,
 										{
 											backgroundColor: SiteFunctions.getCongestionColour(beachData[item].congestion),
 											borderColor: SiteFunctions.getCongestionColour(beachData[item].congestion, "dark"),
 										},
-										SiteStyles.compactCard
-									)}>
+									]}>
 									<Card.Title style={SiteStyles.cardTitle}>{beachData[item].name}</Card.Title>
 									<Text>{beachData[item].congestion + " congestion"}</Text>
 								</Card>

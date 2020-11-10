@@ -39,6 +39,7 @@ const NavBottom = ({ siteColours, userSettings, updateUserSettings }: any) => {
 					children={() => <Map siteColours={siteColours} userSettings={userSettings} updateUserSettings={updateUserSettings} />}
 					options={{
 						tabBarLabel: "Map",
+						tabBarAccessibilityLabel: "Map page",
 						tabBarIcon: ({ color }) => <Icon name="map" size={26} color={color} />,
 					}}
 				/>
@@ -47,6 +48,7 @@ const NavBottom = ({ siteColours, userSettings, updateUserSettings }: any) => {
 					children={() => <AllBeaches siteColours={siteColours} userSettings={userSettings} updateUserSettings={updateUserSettings} />}
 					options={{
 						tabBarLabel: "Search",
+						tabBarAccessibilityLabel: "Search page",
 						tabBarIcon: ({ color }) => <Icon name="search" size={26} color={color} />,
 					}}
 				/>
@@ -55,6 +57,7 @@ const NavBottom = ({ siteColours, userSettings, updateUserSettings }: any) => {
 					children={() => <FAQ siteColours={siteColours} userSettings={userSettings} updateUserSettings={updateUserSettings} />}
 					options={{
 						tabBarLabel: "FAQ",
+						tabBarAccessibilityLabel: "FAQ page",
 						tabBarIcon: ({ color }) => <Icon name="help" size={26} color={color} />,
 					}}
 				/>

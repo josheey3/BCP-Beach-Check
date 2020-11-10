@@ -21,7 +21,7 @@ const AllBeaches = ({ userSettings, updateUserSettings }: any) => {
 
 	return (
 		<ScrollView>
-			<SearchBar placeholder="Search..." onChangeText={updateBeachData} value={search} />
+			<SearchBar placeholder="Search..." onChangeText={updateBeachData} value={search} accessibilityLabel="Type here to seach for a beach" />
 			<Card containerStyle={SiteStyles.compactCard}>
 				<Card.Title style={SiteStyles.cardTitle}>Beach amenities</Card.Title>
 				<View style={SiteStyles.row}>
@@ -42,15 +42,15 @@ const AllBeaches = ({ userSettings, updateUserSettings }: any) => {
 					<View style={{ width: "100%" }} key={key}>
 						<Card
 							key={key}
-							containerStyle={Object.assign(
+							containerStyle={[
+								SiteStyles.compactCard,
 								{
 									borderColor: SiteFunctions.getCongestionColour(item.congestion, "dark"),
 									backgroundColor: SiteFunctions.getCongestionColour(item.congestion),
 									paddingTop: 0,
 									marginBottom: 4,
 								},
-								SiteStyles.compactCard
-							)}>
+							]}>
 							<Button
 								type="clear"
 								icon={{
@@ -59,6 +59,8 @@ const AllBeaches = ({ userSettings, updateUserSettings }: any) => {
 								}}
 								title={item.name + " Beach"}
 								titleStyle={{ color: "black" }}
+								accessibilityLabel="Toggle starred for beach"
+								accessibilityHint="Press to star or unstar a beach"
 								onPress={() => {
 									// As the key only gives the order of the cards (which change when we search/filter), need to find the id of the beach from it's name first
 									let selectedBeachID: number = DataFunctions.getBeachDataByKey("name", item.name)[0]["id"];
@@ -84,13 +86,13 @@ const AllBeaches = ({ userSettings, updateUserSettings }: any) => {
 			) : (
 				<View style={{ margin: 8 }}>
 					<Card
-						containerStyle={Object.assign(
+						containerStyle={[
+							SiteStyles.compactCard,
 							{
 								backgroundColor: "rgba(255,0,0,0.15)",
 								borderColor: "red",
 							},
-							SiteStyles.compactCard
-						)}>
+						]}>
 						<Card.Title style={SiteStyles.cardTitle}>No beaches match that search.</Card.Title>
 					</Card>
 				</View>

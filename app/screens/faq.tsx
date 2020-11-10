@@ -21,6 +21,8 @@ const FAQ = ({ siteColours }: any) => {
 						icon={{ name: "email", color: siteColours.primary }}
 						title="Contact us"
 						titleStyle={{ color: siteColours.primary }}
+						accessibilityLabel="Send email to Bournemouth Council"
+						accessibilityHint="Click to open your defaul email app"
 						onPress={() => {
 							Linking.openURL("mailto:help@bcpbeach.co.uk"); // Use Linking to go straight to device's default email app
 						}}></Button>
@@ -29,6 +31,8 @@ const FAQ = ({ siteColours }: any) => {
 						icon={{ name: "open-in-new", color: siteColours.primary }}
 						title="Visit website"
 						titleStyle={{ color: siteColours.primary }}
+						accessibilityLabel="Open bcp council website"
+						accessibilityHint="Click to go view more information on the bcp council website"
 						onPress={() => {
 							Linking.openURL("https://www.bcpcouncil.gov.uk/Home.aspx"); // Use Linking to go straight to device's default web browser app
 						}}></Button>

@@ -50,6 +50,8 @@ const NavHeader = ({ siteColours, userSettings, updateUserSettings }: any) => {
 							name: "palette",
 							color: siteColours.primary,
 						}}
+						accessibilityLabel="Change theme"
+						accessibilityHint="Press to select a theme for the app"
 						onPress={() => setIsSheetVisible(true)}
 					/>
 				}
@@ -57,7 +59,7 @@ const NavHeader = ({ siteColours, userSettings, updateUserSettings }: any) => {
 			{/* Display a bottom sheet for switching themes */}
 			<BottomSheet isVisible={isSheetVisible} modalProps={{ animationType: "slide", onRequestClose: () => setIsSheetVisible(false) }}>
 				<View>
-					<Card containerStyle={Object.assign({ width: "100%" }, SiteStyles.compactCard)}>
+					<Card containerStyle={[SiteStyles.compactCard, { width: "100%" }]}>
 						<Card.Title style={SiteStyles.cardTitle}>Choose a theme</Card.Title>
 					</Card>
 					{themeOptions.map((theme, key) => (
@@ -66,6 +68,7 @@ const NavHeader = ({ siteColours, userSettings, updateUserSettings }: any) => {
 							onPress={theme.onPress}
 							title={theme.title + (userSettings.theme.toLocaleLowerCase() == theme.title.toLocaleLowerCase() ? " (active)" : "")}
 							titleStyle={theme.titleStyle}
+							accessibilityHint={"Press to change theme to " + theme.title}
 							buttonStyle={theme.containerStyle}
 						/>
 					))}

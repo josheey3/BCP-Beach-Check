@@ -34,7 +34,7 @@ const Map = (preview: any) => {
 					? mapMarkers.map((marker: any, key: number) => (
 							<Marker
 								key={key}
-								opacity={region.latitudeDelta < 0.1 ? 1 : 0} // Only show markers when zoomed in enough
+								opacity={region.longitudeDelta < 0.1 ? 1 : 0} // Only show markers when zoomed in enough
 								coordinate={marker.coordinate}
 								image={marker.image}
 								title={marker.title}

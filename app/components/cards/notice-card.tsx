@@ -18,14 +18,15 @@ const NoticeCard = () => {
 				{noticeData.map((item: any, key: number) => (
 					<Card
 						key={key}
-						containerStyle={Object.assign(
+						containerStyle={[
+							SiteStyles.compactCard,
 							{
 								backgroundColor: "rgba(255,0,0,0.25)",
 								borderColor: "red",
 								marginBottom: 4,
 							},
-							SiteStyles.compactCard
-						)}>
+						]}
+					>
 						<Card.Title style={SiteStyles.cardTitle}>{item.title}</Card.Title>
 						<Text>{item.message}</Text>
 					</Card>
